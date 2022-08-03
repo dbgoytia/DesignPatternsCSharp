@@ -15,12 +15,20 @@ This is achieved by using interfaces.
 
 # The solutions
 
-There are a total of three library files within this project, each of them explaining the solution
+There are a total of three files within this project.
 
-* NaiveImplementation: This file basically shows the naive way of doing this, which would be by 
+* NaiveImplementation: This file basically shows the core of the problem, which would be by 
 creating a concrete class for our Interface, making our 'target class' decoupled for the new methods
 you might add, but tightly coupled to the concrete implementation of the interface, and thus loosing
 flexibility.
+
+* NaiveImplementation: This file basically shows the problem that we're trying to solve, which is
+create a solution that works for any given mehtod of storage that a particular client might be using
+for storing movies. Naively, in this example we thought that using the IMovieFinder interface as a 
+property within our MovieLister class would be enough. But then on the constructor we are using a
+concrete class for creating our MovieLister. This makes MovieLister and the ColonDelimitedMovieFinder
+tightly coupled. Any other client that wants to do this would then need to re-create the MovieLister
+class to make things work if they are using something different than colon delimited files.
 
 * The ConstructorInjection.cs demonstrates the way we can inject interfaces using the constructor
 method of a given class. All of the other methods remain unchanged, and therefore our code is now
