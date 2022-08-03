@@ -1,6 +1,6 @@
 # Dependency Injection
 
-Taken from: https://martinfowler.com/articles/injection.html#UsingAServiceLocator
+Source: https://martinfowler.com/articles/injection.html#InversionOfControl
 
 This technique makes a particular class independent of the implementation of it's given dependencies.
 It achieves that by decoupling the usage of an object, from the creation of the object. It is also
